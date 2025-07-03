@@ -1,0 +1,24 @@
+{
+  "name": "direct_websocket_bridge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "nodemon",
+    "start": "tsc -b  && node ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@types/typescript": "^0.4.29",
+    "@types/ws": "^8.18.1"
+  }
+}
