@@ -1,12 +1,10 @@
 "use strict";
-// import { server1 } from "./server1";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.server1 = exports.server1Clients = void 0;
 const ws_1 = require("ws");
 exports.server1Clients = new Set();
 exports.server1 = new ws_1.WebSocketServer({ port: 8080 });
 console.log("✅ Server1 running on ws://localhost:8080");
-console.log('size of serverClients : ', exports.server1Clients.size);
 exports.server1.on('connection', (socket) => {
     exports.server1Clients.add(socket);
     socket.send('connection to server1 : 8080');
