@@ -4,4 +4,4 @@ import { createBridge } from "./bridge";
 
 setTimeout(() => {
   createBridge();
-}, 10000);
+}, 1000);
