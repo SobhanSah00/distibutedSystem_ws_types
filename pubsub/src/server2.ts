@@ -31,3 +31,28 @@ wss.on("connection", (socket) => {
         console.log("❌ Disconnected from Server2");
     });
 });
+
+
+
+/*
+
+Very Important thing to know here 
+
+    There are two parallel mechanisms in the server:
+        1. WebSocket server (wss.on("connection"))
+        Accepts connections from real clients (like a browser or wscat)
+
+        When a message comes from a client:
+
+        It's published to Redis using pub.publish(...)
+
+        2. Redis subscriber (sub.subscribe(...))
+        Runs independently at the top
+
+        Listens for new messages from Redis
+
+        When Redis sends a message:
+
+        The server broadcasts it to all connected WebSocket clients
+
+*/
